@@ -3,4 +3,5 @@ virtual/
 *.pyc
 .env
 migrations/
-
+.vscode
+db.sqlite3
