@@ -13,3 +13,16 @@ class Profile(models.Model):
     email = models.EmailField(max_length=100)
     date = models.DateTimeField(auto_now_add=True)
     profile_avatar = ProcessedImageField(upload_to = 'avatars/', processors=[ResizeToFill(100,100)], format = 'JPEG', options ={'quality':60})
+
+class Feedback(models.Model):
+    body = models.TextField()
+    title = models.CharField(max_length=255)
+    date =  models.DateTimeField(auto_now_add=True)
+
+class Report(models.Model):
+	body = models.TextField()
+	title = models.CharField(max_length=255)
+	date = models.DateTimeField(auto_now_add=True)
+
+	
+    
