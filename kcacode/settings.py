@@ -25,7 +25,7 @@ SECRET_KEY = 'or9wzgd^@l*u=^vmzh@jlqg)=57&%9er5@omf4@zxm*94$)8c1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4',
     'assurance',
-    
+    'admin',
+    # 'django-imagekit'
 ]
 
 MIDDLEWARE = [

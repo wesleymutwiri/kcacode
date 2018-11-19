@@ -19,10 +19,10 @@ class Feedback(models.Model):
     title = models.CharField(max_length=255)
     date =  models.DateTimeField(auto_now_add=True)
 
-class Report(models.Model):
-	body = models.TextField()
-	title = models.CharField(max_length=255)
-	date = models.DateTimeField(auto_now_add=True)
+# class Report(models.Model):
+# 	body = models.TextField()
+# 	title = models.CharField(max_length=255)
+# 	date = models.DateTimeField(auto_now_add=True)
 
 	
     
