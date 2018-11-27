@@ -1,4 +1,9 @@
 {% extends 'assurance/base.html' %}
+{% load bootstrap4 %}
 {% block content %}
-
+<form action="{%url 'feedback' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+{% bootstrap_form form %}
+<input type="submit" value="Post" class="btn btn-success btn-lg">
+</form>
 {% endblock %}

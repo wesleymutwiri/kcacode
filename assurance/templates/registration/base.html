@@ -8,11 +8,14 @@
     {%block styles%}
     {%bootstrap_css%}
     <link rel="stylesheet" href="{%static 'css/registration.css'%}">
+    <link rel="stylesheet" href="{%static 'css/navbar.css'%}">
+
     {% endblock %}
 
 </head>
 
 <body>
+    {% include 'navbar.html' %}
     {%block content%}
     {% endblock %}
     {% block scripts %}

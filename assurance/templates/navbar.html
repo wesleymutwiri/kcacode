@@ -1,0 +1,44 @@
+{% load static %}
+
+<header>
+    <h1 class="logo">KCA Quality Assurance System</h1>
+</header>
+
+<nav>
+    <ul>
+        {%if user.is_authenticated() %}
+        <li class="nav-item">
+            <a href="{% url 'index' %}" class="nav-link">Home</a>
+
+        </li>
+        <li class="nav-item">
+            <a href="{% url 'feedback' %}" class="nav-link">Send Feedback</a>
+        
+        </li>
+        <li class="nav-item">
+            <a href="{% url 'profile' %}" class="nav-link">Profile</a>
+        
+        </li>
+        
+        <li class="nav-item">
+            <a href="/" class="nav-link">Logout</a>
+        
+        </li>
+        {% else %}
+        <li class="nav-item">
+            <a href="/accounts/login" class="nav-link">Login</a>
+            
+        </li>
+        <li class="nav-item">
+            <a href="/accounts/register" class="nav-link">Sign Up</a>
+        
+        </li>
+        {% endif %}
+    </ul>
+    <div class="menu-bar">
+        Menu
+        <span class="hamburger-icon">
+            <i class="fa fa-bars"></i>
+        </span>
+    </div>
+</nav>
