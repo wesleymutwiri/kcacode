@@ -16,7 +16,7 @@ def index(request):
     #     "feedback": feedback,
     #     "profile": profile,
     # }
-    return render(request, 'assurance/index.html', includes)
+    return render(request, 'assurance/index.html')
 
 def about(request):
     return render(request, 'assurance/about.html')

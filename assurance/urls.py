@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^$', views.index, name= 'index'),
     url(r'about', views.about, name= 'about'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
-    url(r'new/feedback$', views.feedback, name='feedback')
+    url(r'new/feedback$', views.feedback, name='feedback'),
+    url(r'profile', views.profile, name='profile'),
 ]
 
