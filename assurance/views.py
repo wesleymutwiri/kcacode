@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from assurance.forms import FeedbackForm
+from assurance.forms import FeedbackForm, ProfileForm
 from django.db import transaction
 from .models import Feedback, Profile
 from django.contrib.auth.forms import UserCreationForm
@@ -42,13 +42,14 @@ def feedback(request):
     profile = request.user.profile
 
     if request.method == 'POST':
-        form = FeedbackForm(request.POST)
+        form = FeedbackForm(request.POST    )
         if form.is_valid():
             feedback = form.save(commit=False)
             feedback.username = current_user
             feedback.profile = profile
+            
             feedback.save()
-        return redirect('index')
+            return redirect('index')
     else:
         form = FeedbackForm()
     return render(request, 'assurance/feedback.html', {"form":form})

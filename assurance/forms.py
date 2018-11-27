@@ -11,7 +11,7 @@ class FeedbackForm(forms.ModelForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ['date', 'firstname', 'lastname', 'email', 'username']        
+        exclude = ['date', 'firstname', 'lastname', 'email', 'user', ]        
 
 class SignUpForm(UserCreationForm):
     first_name = forms.CharField(max_length=30, required=True,)
