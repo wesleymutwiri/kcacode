@@ -16,6 +16,7 @@ def index(request):
     #     "feedback": feedback,
     #     "profile": profile,
     # }
+    user = request.user
     return render(request, 'assurance/index.html')
 
 def about(request):
@@ -42,12 +43,12 @@ def feedback(request):
     profile = request.user.profile
 
     if request.method == 'POST':
-        form = FeedbackForm(request.POST    )
+        form = FeedbackForm(request.POST)
         if form.is_valid():
             feedback = form.save(commit=False)
             feedback.username = current_user
             feedback.profile = profile
-            
+            feedback.user_id=request.user.id
             feedback.save()
             return redirect('index')
     else:

@@ -7,11 +7,13 @@ class FeedbackForm(forms.ModelForm):
     class Meta:
         model = Feedback
         exclude = ['user', 'date', 'report']
-    
+        widgets = {
+            'category': forms.Select(),
+        }
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ['date', 'firstname', 'lastname', 'email', 'user', ]        
+        exclude = ['date', 'firstname', 'lastname', 'email', 'user']        
 
 class SignUpForm(UserCreationForm):
     first_name = forms.CharField(max_length=30, required=True,)
